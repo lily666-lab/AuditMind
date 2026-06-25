@@ -1,0 +1,1505 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AuditMind - AI 审计工作流助手</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body data-view="landing" data-current-page="overview">
+    <section class="landing-page" id="landing-page" aria-label="AuditMind 产品介绍">
+      <nav class="landing-nav">
+        <div class="landing-brand">
+          <img src="assets/brand/icon2.png" alt="" />
+          <span>AuditMind</span>
+        </div>
+        <div class="landing-links" aria-label="产品导航">
+          <a href="#landing-features">产品功能</a>
+          <a href="#landing-assurance">工作流程</a>
+          <a href="#landing-security">安全与合规</a>
+          <a href="#landing-assurance">关于我们</a>
+          <a href="#landing-assurance">定价</a>
+        </div>
+        <div class="landing-nav-actions">
+          <button class="landing-button secondary landing-login" type="button">登录</button>
+          <button class="landing-button landing-start" type="button">开始试用</button>
+        </div>
+      </nav>
+
+      <main class="landing-scroll">
+        <section class="landing-section landing-hero reveal-section" id="landing-hero">
+          <div class="landing-copy">
+            <h1>你的AI审计<span>工作伙伴</span></h1>
+            <p>用 AI 重整审计工作流，让审计工作更简单。</p>
+            <p class="landing-subcopy">项目资料、抽样、底稿生成与人工复核，统一在一个智能工作空间完成。</p>
+            <div class="landing-actions">
+              <button class="landing-button landing-start" type="button">开始试用 <span aria-hidden="true">→</span></button>
+              <button class="landing-button secondary landing-demo-jump" type="button">观看演示 <span aria-hidden="true">▷</span></button>
+            </div>
+            <div class="landing-trust">
+              <span><i aria-hidden="true">□</i>基于本地资料</span>
+              <span><i aria-hidden="true">✓</i>输出可复核</span>
+              <span><i aria-hidden="true">▣</i>安全可靠</span>
+            </div>
+          </div>
+          <div class="landing-visual">
+            <img src="assets/landing/landing page1 -中文版图片素材-透明.png" alt="AuditMind 审计工作流示意图" />
+          </div>
+        </section>
+
+        <section class="landing-section landing-features reveal-section" id="landing-features">
+          <div class="landing-section-heading">
+            <h2>覆盖审计全流程的核心能力</h2>
+            <p>从项目资料归集到抽样、底稿生成与复核，AuditMind 为审计工作提供完整闭环支持。</p>
+          </div>
+          <div class="landing-feature-grid">
+            <article>
+              <img src="assets/landing/landing page 2-项目管理_透明素材.png" alt="" />
+              <div>
+                <h3>项目管理</h3>
+                <p>集中管理审计项目与资料，清晰掌握进度与状态。</p>
+              </div>
+            </article>
+            <article>
+              <img src="assets/landing/landing page 2-AI知识库_透明素材.png" alt="" />
+              <div>
+                <h3>AI 知识库</h3>
+                <p>基于本地资料的 RAG 问答，提供带引用的审计知识支持。</p>
+              </div>
+            </article>
+            <article>
+              <img src="assets/landing/landing page 2-审计工作台_透明素材.png" alt="" />
+              <div>
+                <h3>审计工作台</h3>
+                <p>自动生成底稿草稿，支持人工补充与复核。</p>
+              </div>
+            </article>
+            <article>
+              <img src="assets/landing/landing page 2-抽凭中心_透明素材.png" alt="" />
+              <div>
+                <h3>抽凭中心</h3>
+                <p>按规则自动抽样，人工灵活勾选，样本自动回填底稿。</p>
+              </div>
+            </article>
+            <article>
+              <img src="assets/landing/landing page 2-模板管理_透明素材.png" alt="" />
+              <div>
+                <h3>模板管理</h3>
+                <p>统一管理底稿与询证函模板，一键生成标准化工作底稿。</p>
+              </div>
+            </article>
+            <article>
+              <img src="assets/landing/landing page 2-函证中心_透明素材.png" alt="" />
+              <div>
+                <h3>函证中心</h3>
+                <p>根据底稿识别账户与往来科目，自动生成询证函。</p>
+              </div>
+            </article>
+          </div>
+          <div class="landing-feature-preview">
+            <section class="landing-preview-card">
+              <div class="landing-preview-title">
+                <span>1</span>
+                <h3>资料上传与缺口识别</h3>
+              </div>
+              <div class="landing-upload-preview" aria-hidden="true">
+                <div class="upload-drop-demo">
+                  <strong>拖拽或点击上传</strong>
+                  <small>PDF / XLSX / DOC</small>
+                </div>
+                <div class="upload-file-list">
+                  <div><b>资产负债表_2024.xlsx</b><em>已识别</em></div>
+                  <div><b>银行对账单_2024.pdf</b><em>已识别</em></div>
+                  <div><b>固定资产明细表.xlsx</b><em>待复核</em></div>
+                </div>
+              </div>
+            </section>
+            <section class="landing-preview-card">
+              <div class="landing-preview-title">
+                <span>2</span>
+                <h3>抽样结果联动底稿</h3>
+              </div>
+              <div class="landing-sampling-preview" aria-hidden="true">
+                <div class="sample-chart-demo">
+                  <strong>120</strong>
+                  <small>总样本数</small>
+                </div>
+                <div class="workpaper-demo">
+                  <div><strong>应收账款函证底稿</strong><em>已联动更新</em></div>
+                  <p></p>
+                  <p></p>
+                  <p></p>
+                  <footer><span>合计</span><b>3,048,470.00</b></footer>
+                </div>
+              </div>
+            </section>
+          </div>
+        </section>
+
+        <section class="landing-section landing-assurance reveal-section" id="landing-assurance">
+          <div class="landing-final-copy">
+            <h2><span class="title-line">让 AI 处理重复工作，</span><span class="title-line">让审计保持<span>专业判断。</span></span></h2>
+            <p>所有输出基于已上传资料，不编造审计结论；保留引用依据，支持人工复核后导出。</p>
+            <ul>
+              <li><span>✓</span>输出基于本地资料</li>
+              <li><span>✓</span>保留引用依据，可人工复核</li>
+              <li><span>✓</span>支持 Excel 导出，符合底稿交付要求</li>
+              <li><span>✓</span>适用于货币资金、截止测试、大额收支检查等场景</li>
+            </ul>
+          </div>
+          <section class="landing-workbench-preview" id="landing-security" aria-label="审计工作台预览">
+            <div class="workbench-head">
+              <h3>审计工作台</h3>
+              <span>本地资料已连接 ✓</span>
+            </div>
+            <div class="workbench-metrics">
+              <div>
+                <small>底稿生成进度</small>
+                <strong>75%</strong>
+                <i></i>
+              </div>
+              <div>
+                <small>抽样完成</small>
+                <strong>128 条</strong>
+              </div>
+              <div>
+                <small>待复核</small>
+                <strong>8 项</strong>
+              </div>
+            </div>
+            <div class="workbench-table">
+              <div class="workbench-table-title">
+                <strong>银行大额收支检查表</strong>
+                <span>导出 Excel</span>
+              </div>
+              <table>
+                <thead>
+                  <tr>
+                    <th>序号</th>
+                    <th>交易日期</th>
+                    <th>摘要</th>
+                    <th>金额（元）</th>
+                    <th>抽样结果</th>
+                    <th>状态</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td>2026-10-25</td>
+                    <td>客户回款</td>
+                    <td>98,750.00</td>
+                    <td>入选样本</td>
+                    <td><span>已选择样本</span></td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>2026-10-27</td>
+                    <td>贷款支付</td>
+                    <td>125,600.00</td>
+                    <td>入选样本</td>
+                    <td><span>已选择样本</span></td>
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td>2026-10-30</td>
+                    <td>往来款项</td>
+                    <td>76,300.00</td>
+                    <td>入选样本</td>
+                    <td><span>已选择样本</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p>基本本地资料生成 · 保留引用依据 · 支持人工复核</p>
+          </section>
+          <aside class="landing-final-cta">
+            <img src="assets/brand/icon2-transparent.png" alt="" />
+            <h3>准备好体验<br /><span>更智能</span>的审计工作方式了吗？</h3>
+            <button class="landing-button landing-start" type="button">开始免费试用 <span aria-hidden="true">→</span></button>
+            <button class="landing-button secondary" type="button">预约产品演示 <span aria-hidden="true">▣</span></button>
+            <p>安全可靠 · 合规可审 · 值得信赖</p>
+          </aside>
+          <div class="landing-final-bar">
+            <div class="final-bar-brand">
+              <img src="assets/brand/icon2.png" alt="" />
+              <strong>AuditMind</strong>
+            </div>
+            <p>AuditMind 已就绪，开启更高效、更智能的审计体验。</p>
+            <div><span>✓</span><strong>数据安全</strong><small>本地处理，不上传</small></div>
+            <div><span>▣</span><strong>合规可审</strong><small>留痕可追溯</small></div>
+            <div><span>★</span><strong>专业可靠</strong><small>助力审计更专业</small></div>
+          </div>
+        </section>
+      </main>
+    </section>
+
+    <div class="app-shell" id="app-shell">
+      <aside class="sidebar" aria-label="主菜单">
+        <button class="brand brand-home" id="brand-home" type="button" aria-label="返回 AuditMind 产品介绍页">
+          <img class="brand-logo" src="assets/brand/icon2.png" alt="" />
+          <div>
+            <p class="brand-name">AuditMind</p>
+            <p class="brand-subtitle">你的 AI 审计工作台</p>
+          </div>
+        </button>
+
+        <nav class="nav-list">
+          <button class="nav-item active" data-page="overview" type="button">
+            <span class="nav-icon">01</span>
+            工作台总览
+          </button>
+          <button class="nav-item" data-page="projects" type="button">
+            <span class="nav-icon">02</span>
+            项目管理
+          </button>
+          <button class="nav-item" data-page="knowledge" type="button">
+            <span class="nav-icon">03</span>
+            知识库
+          </button>
+          <button class="nav-item" data-page="workspace" type="button">
+            <span class="nav-icon">04</span>
+            审计工作台
+          </button>
+          <button class="nav-item" data-page="sampling-center" type="button">
+            <span class="nav-icon">05</span>
+            抽凭中心
+          </button>
+          <button class="nav-item" data-page="templates" type="button">
+            <span class="nav-icon">06</span>
+            模板管理
+          </button>
+          <button class="nav-item" data-page="confirmation-center" type="button">
+            <span class="nav-icon">07</span>
+            函证中心
+          </button>
+          <button class="nav-item" data-page="settings" type="button">
+            <span class="nav-icon">08</span>
+            设置
+          </button>
+        </nav>
+
+      </aside>
+
+      <main class="main-content">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">MVP Preview</p>
+            <h1 id="page-title">AuditMind，你的 AI 审计工作伙伴</h1>
+          </div>
+          <button class="primary-action" id="new-project-shortcut" type="button">＋ 新建审计项目</button>
+        </header>
+
+        <section class="page-grid">
+          <article class="page-section active" id="overview">
+            <section class="overview-hero">
+              <div class="overview-hero-copy">
+                <h2>你的AI审计工作伙伴</h2>
+                <p>用 AI 重整审计工作流，让审计工作更简单</p>
+              </div>
+              <div class="overview-hero-visual">
+                <img src="assets/homepage/工作台总览图片素材-透明.png" alt="AuditMind 工作台总览插画" />
+              </div>
+            </section>
+
+            <section class="overview-project-card" aria-label="当前项目">
+              <div class="overview-project-main">
+                <p class="section-kicker">CURRENT PROJECT</p>
+                <h2 id="overview-project-name">尚未选择项目</h2>
+                <p id="overview-project-status">点击右上角新建审计项目，开始组织底稿、抽凭、知识库和模板。</p>
+                <div class="overview-progress">
+                  <span><i id="overview-progress-bar"></i></span>
+                  <strong id="overview-progress-text">0%</strong>
+                </div>
+              </div>
+              <div class="overview-project-stats">
+                <div class="overview-status-item">
+                  <span>资料状态</span>
+                  <strong id="overview-uploaded-count">0</strong>
+                  <small id="overview-material-note">尚未登记资料</small>
+                </div>
+                <div class="overview-status-item">
+                  <span>复核提醒</span>
+                  <strong id="overview-review-count">0</strong>
+                  <small id="overview-review-note">暂无确认样本</small>
+                </div>
+                <div class="overview-status-item">
+                  <span>当前阶段</span>
+                  <strong id="overview-stage">准备中</strong>
+                  <small id="overview-next-step">先建立项目主档</small>
+                </div>
+              </div>
+            </section>
+          </article>
+
+          <article class="content-panel page-section" id="projects">
+            <div class="project-management">
+              <section class="project-form-panel" aria-labelledby="project-form-title">
+                <div class="panel-heading-row">
+                  <div>
+                    <p class="section-kicker">Project File</p>
+                    <h3 id="project-form-title">项目主档</h3>
+                  </div>
+                  <div class="project-form-state">
+                    <span class="project-mode-pill" id="project-form-mode">新建项目</span>
+                    <span class="project-save-status" id="project-save-status">未保存</span>
+                  </div>
+                </div>
+
+                <form class="project-form" id="project-form">
+                  <input id="project-id" type="hidden" />
+
+                  <div class="project-form-section">
+                    <h4>基本信息</h4>
+                    <div class="project-field-grid">
+                      <label class="inline-field">
+                        <span>项目名称</span>
+                        <input id="project-name" type="text" placeholder="例如：A 公司 2026 年度审计" required />
+                      </label>
+                      <label class="inline-field">
+                        <span>被审计单位名称</span>
+                        <input id="project-client-name" type="text" placeholder="例如：A 有限公司" required />
+                      </label>
+                      <label class="inline-field">
+                        <span>审计年度</span>
+                        <input id="project-audit-year" type="number" min="2000" max="2100" placeholder="2026" required />
+                      </label>
+                      <label class="inline-field">
+                        <span>财务报表截止日</span>
+                        <input id="project-cutoff-date" type="date" required />
+                      </label>
+                      <label class="inline-field">
+                        <span>所属行业</span>
+                        <input id="project-industry" type="text" placeholder="例如：制造业 / 互联网 / 零售" />
+                      </label>
+                      <label class="inline-field">
+                        <span>审计业务类型</span>
+                        <select id="project-audit-type">
+                          <option value="年报审计">年报审计</option>
+                          <option value="专项审计">专项审计</option>
+                          <option value="其他鉴证业务">其他鉴证业务</option>
+                          <option value="其他">其他</option>
+                        </select>
+                      </label>
+                      <label class="inline-field">
+                        <span>业务承接类型</span>
+                        <select id="project-engagement-type">
+                          <option value="连续审计业务">连续审计业务</option>
+                          <option value="首次承接审计业务">首次承接审计业务</option>
+                        </select>
+                      </label>
+                      <label class="inline-field">
+                        <span>项目状态</span>
+                        <select id="project-status">
+                          <option value="准备中">准备中</option>
+                          <option value="资料收集中">资料收集中</option>
+                          <option value="底稿编制中">底稿编制中</option>
+                          <option value="复核中">复核中</option>
+                          <option value="已完成">已完成</option>
+                        </select>
+                      </label>
+                    </div>
+                  </div>
+
+                  <div class="project-form-section">
+                    <h4>重要性参数</h4>
+                    <div class="project-field-grid">
+                      <label class="inline-field">
+                        <span>财务报表整体重要性</span>
+                        <input id="project-overall-materiality" type="number" min="0" step="0.01" placeholder="金额" />
+                      </label>
+                      <label class="inline-field">
+                        <span>实际执行的重要性</span>
+                        <input id="project-performance-materiality" type="number" min="0" step="0.01" placeholder="金额" />
+                      </label>
+                      <label class="inline-field">
+                        <span>可容忍错报</span>
+                        <input id="project-tolerable-misstatement" type="number" min="0" step="0.01" placeholder="金额" />
+                      </label>
+                      <label class="inline-field">
+                        <span>明显微小错报临界值</span>
+                        <input id="project-clearly-trivial-threshold" type="number" min="0" step="0.01" placeholder="金额" />
+                      </label>
+                      <label class="inline-field project-wide-field">
+                        <span>重要性确定依据</span>
+                        <input id="project-materiality-basis" type="text" placeholder="例如：以营业收入、资产总额或利润总额为基准" />
+                      </label>
+                      <label class="inline-field project-wide-field">
+                        <span>备注</span>
+                        <textarea id="project-notes" rows="3" placeholder="记录需人工复核的判断、特殊事项或项目背景"></textarea>
+                      </label>
+                    </div>
+                    <p class="helper-text">重要性参数用于提示抽样关注方向，不自动替代审计人员选择样本或形成审计结论。</p>
+                  </div>
+
+                  <div class="project-form-actions">
+                    <button class="primary-action" type="submit">保存修改</button>
+                    <button class="secondary-action" id="reset-project-form" type="button">新建空白项目</button>
+                  </div>
+                </form>
+              </section>
+
+              <section class="project-list-panel" aria-labelledby="project-list-title">
+                <div class="panel-heading-row">
+                  <div>
+                    <p class="section-kicker">Local Projects</p>
+                    <h3 id="project-list-title">项目列表</h3>
+                  </div>
+                  <span id="project-count">0 个项目</span>
+                </div>
+                <div class="project-list" id="project-list">
+                  <div class="empty-gap">还没有项目。请先填写左侧项目主档并保存。</div>
+                </div>
+                <div class="project-pagination" id="project-pagination" hidden>
+                  <button class="secondary-action" id="project-prev-page" type="button">上一页</button>
+                  <span id="project-page-info">第 1 / 1 页</span>
+                  <button class="secondary-action" id="project-next-page" type="button">下一页</button>
+                </div>
+                <p class="helper-text">列表只展示摘要。点击“编辑”可在左侧查看或修改完整项目主档。</p>
+              </section>
+            </div>
+          </article>
+
+          <article class="content-panel page-section" id="knowledge">
+            <div class="knowledge-workbench">
+              <section class="knowledge-qa-panel" aria-labelledby="knowledge-qa-title">
+                <p class="section-kicker">Citation Q&A</p>
+                <h3 id="knowledge-qa-title">带引用问答</h3>
+                <textarea
+                  id="knowledge-question"
+                  rows="4"
+                  placeholder="例如：银行存款测试表需要哪些资料？哪些事项不能自动判断？"
+                ></textarea>
+                <div class="knowledge-actions">
+                  <div class="knowledge-button-group">
+                    <button class="primary-action" id="ask-knowledge" type="button">检索并回答</button>
+                    <button class="secondary-action" id="ask-knowledge-ai" type="button">AI 整理回答</button>
+                  </div>
+                  <span id="knowledge-status">请先输入一个审计问题。</span>
+                </div>
+                <div class="knowledge-answer" id="knowledge-answer">
+                  <p class="note-title">回答区</p>
+                  <p>系统会先检索本地知识库，再基于命中文档给出回答。资料不足时会明确提示缺口。</p>
+                </div>
+              </section>
+            </div>
+          </article>
+
+          <article class="content-panel page-section" id="workspace">
+            <div class="workspace-layout">
+              <div class="workspace-main">
+                <label class="subject-field" for="subject-select">
+                  <span>审计科目</span>
+                  <select id="subject-select">
+                    <option selected>货币资金</option>
+                    <option>应收账款</option>
+                    <option>预收账款</option>
+                    <option>固定资产</option>
+                    <option>存货</option>
+                    <option>收入成本</option>
+                  </select>
+                </label>
+
+                <section class="subject-overview">
+                  <div>
+                    <p class="section-kicker">Current Subject</p>
+                    <h2 id="subject-title">货币资金审计概览</h2>
+                    <p>
+                      <span id="subject-description">当前科目先以货币资金为试点，覆盖库存现金、银行存款、其他货币资金、函证、余额调节表和截止测试。</span>
+                    </p>
+                  </div>
+                  <div class="template-tag" id="subject-template">默认模板：公司财审空白底稿</div>
+                </section>
+
+                <div class="audit-summary-grid">
+                  <section class="summary-card">
+                    <p class="section-kicker">Audit Flow</p>
+                    <h3>审计流程</h3>
+                    <ol id="audit-flow-list">
+                      <li>获取科目余额表、明细账、日记账和银行资料。</li>
+                      <li>核对账表、银行对账单和余额调节表。</li>
+                      <li>执行函证、抽凭、截止测试和异常事项跟进。</li>
+                      <li>汇总检查异常，形成补充资料清单和复核建议。</li>
+                    </ol>
+                  </section>
+                  <section class="summary-card">
+                    <p class="section-kicker">Before Audit</p>
+                    <h3>审前关注点</h3>
+                    <ul id="pre-risk-list">
+                      <li>银行账户是否完整，是否存在账外账户。</li>
+                      <li>是否存在受限资金、保证金或资金池业务。</li>
+                      <li>未达账项是否长期未清，函证是否能覆盖主要账户。</li>
+                    </ul>
+                  </section>
+                  <section class="summary-card wide-card">
+                    <p class="section-kicker">Request List</p>
+                    <h3>需要会计提供的资料清单</h3>
+                    <ul class="material-list" id="material-list">
+                      <li>科目余额表</li>
+                      <li>总账 / 明细账 / 日记账</li>
+                      <li>银行对账单</li>
+                      <li>余额调节表</li>
+                      <li>开户清单</li>
+                      <li>银行询证函及回函</li>
+                      <li>现金盘点表</li>
+                      <li>大额收支凭证</li>
+                    </ul>
+                  </section>
+                </div>
+
+                <div class="workspace-actions">
+                  <button class="primary-action" id="generate-workpaper" type="button">生成底稿</button>
+                  <button class="secondary-action disabled-action" type="button" disabled>
+                    生成报告
+                    <span>暂未开放</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="content-panel page-section" id="sampling-center">
+            <div class="sampling-layout">
+              <section class="builder-card sampling-task-card">
+                <p class="section-kicker">Tasks</p>
+                <h3>抽凭任务</h3>
+                <p class="helper-text" id="sampling-source-status">读取底稿生成页已上传的序时账 / 现金日记账</p>
+                <div class="sampling-task-list" id="sampling-task-list"></div>
+              </section>
+
+              <section class="builder-card sampling-workbench">
+                <div class="gap-heading">
+                  <div>
+                    <p class="section-kicker">Rules</p>
+                    <h3 id="sampling-task-title">选择抽凭任务</h3>
+                  </div>
+                  <span id="sampling-task-status">未生成</span>
+                </div>
+
+                <p class="helper-text" id="sampling-task-description">
+                  请选择左侧任务，再设置金额阈值、截止日前后天数和摘要关键词。
+                </p>
+
+                <div class="sampling-review-card" id="sampling-review-card">
+                  <div>
+                    <p class="note-title">人工复核提示</p>
+                    <ul id="sampling-review-points"></ul>
+                  </div>
+                  <p id="sampling-next-action"></p>
+                </div>
+
+                <div class="sampling-rule-grid">
+                  <label class="inline-field">
+                    金额阈值
+                    <input id="sampling-amount-threshold" type="number" min="0" step="1000" />
+                  </label>
+                  <label class="inline-field">
+                    截止日
+                    <input id="sampling-cutoff-date" type="date" />
+                  </label>
+                  <label class="inline-field">
+                    前后天数
+                    <input id="sampling-cutoff-days" type="number" min="0" step="1" />
+                  </label>
+                  <label class="inline-field sampling-keywords-field">
+                    摘要关键词
+                    <input id="sampling-keywords" type="text" placeholder="借款、还款、保证金，用顿号或逗号分隔" />
+                  </label>
+                </div>
+
+                <div class="editor-actions">
+                  <button class="secondary-action" id="generate-sampling-candidates" type="button">生成抽样备选池</button>
+                  <button class="primary-action" id="confirm-sampling-samples" type="button">确认选中样本</button>
+                  <button class="secondary-action" id="return-sampling-to-workpaper" type="button">返回对应底稿</button>
+                </div>
+                <p class="upload-hint" id="sampling-status-message">
+                  当前先支持从已上传的序时账、现金日记账生成备选池。
+                </p>
+
+                <div class="sampling-summary-grid">
+                  <div>
+                    <p class="note-title">抽样备选池</p>
+                    <div class="sampling-table" id="sampling-candidate-list"></div>
+                  </div>
+                  <div>
+                    <p class="note-title">已确认样本</p>
+                    <div class="sampling-table" id="sampling-confirmed-list"></div>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </article>
+
+          <article class="content-panel page-section" id="workpaper">
+            <div class="builder-action-row">
+              <button class="secondary-action" id="back-workspace" type="button">返回审计工作台</button>
+            </div>
+
+            <section class="builder-card audit-period-card">
+              <div>
+                <p class="section-kicker">Audit Period</p>
+                <h3>项目期间</h3>
+                <p class="helper-text" id="audit-period-hint">
+                  可先由序时账、现金日记账等资料自动识别；如识别不准，可手动修改。
+                </p>
+              </div>
+              <div class="audit-period-fields">
+                <label class="inline-field" for="audit-year-input">
+                  <span>审计年度</span>
+                  <input id="audit-year-input" type="text" inputmode="numeric" maxlength="4" placeholder="如 2025" />
+                </label>
+                <label class="inline-field" for="audit-cutoff-date-input">
+                  <span>截止日</span>
+                  <input id="audit-cutoff-date-input" type="date" />
+                </label>
+              </div>
+            </section>
+
+            <div class="workpaper-builder">
+              <section class="builder-card template-strip">
+                <p class="section-kicker">Template</p>
+                <div class="template-strip-body">
+                  <div>
+                    <h3>选择底稿模板</h3>
+                    <p class="template-summary" id="template-summary"></p>
+                  </div>
+                  <div>
+                    <div class="template-options" id="template-options"></div>
+                    <div class="export-actions">
+                      <button class="primary-action" id="export-workpaper-copy" type="button">生成底稿副本</button>
+                      <span id="export-status">副本将输出到 exports/，不会覆盖原模板。</span>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <section class="builder-card workpaper-list-card">
+                <div class="list-heading">
+                  <div>
+                    <p class="section-kicker">Workpapers</p>
+                    <h3>货币资金底稿清单</h3>
+                  </div>
+                  <span id="workpaper-page-info">1 / 1</span>
+                </div>
+                <div class="workpaper-list" id="workpaper-list"></div>
+                <div class="pager-actions">
+                  <button class="secondary-action" id="prev-workpaper-page" type="button">上一页</button>
+                  <button class="secondary-action" id="next-workpaper-page" type="button">下一页</button>
+                </div>
+              </section>
+
+              <section class="builder-card workpaper-detail-card">
+                <p class="section-kicker">Filling Guide</p>
+                <h3 id="selected-workpaper-title">底稿填制要求</h3>
+                <p id="selected-workpaper-objective"></p>
+                <div>
+                  <p class="note-title">需要资料</p>
+                  <ul id="selected-workpaper-materials"></ul>
+                </div>
+                <div>
+                  <p class="note-title">可自动填字段</p>
+                  <ul id="selected-workpaper-auto-fields"></ul>
+                </div>
+                <div>
+                  <p class="note-title">必须人工复核</p>
+                  <ul id="selected-workpaper-manual"></ul>
+                </div>
+                <div>
+                  <p class="note-title">执行中异常提示</p>
+                  <ul id="selected-workpaper-alerts"></ul>
+                </div>
+              </section>
+
+              <section class="builder-card evidence-card">
+                <div class="evidence-upload">
+                  <div class="upload-dropzone">
+                    <label class="file-picker" for="audit-file-input">
+                      <strong>选择本地资料文件</strong>
+                      <span id="selected-file-name">尚未选择文件</span>
+                    </label>
+                    <input id="audit-file-input" type="file" />
+                    <div class="upload-form">
+                      <label for="material-type-select">资料类型</label>
+                      <select id="material-type-select"></select>
+                      <button class="primary-action" id="confirm-material-upload" type="button">确认资料类型</button>
+                    </div>
+                    <p class="upload-hint" id="upload-hint">选择文件并确认资料类型后，会自动勾选“已取得资料”。</p>
+                  </div>
+                </div>
+
+                <div class="uploaded-files-card">
+                  <div class="gap-heading">
+                    <div>
+                      <p class="section-kicker">Uploaded</p>
+                      <h3>已上传资料</h3>
+                    </div>
+                    <span id="uploaded-count">0 个</span>
+                  </div>
+                  <div class="uploaded-file-list" id="uploaded-file-list"></div>
+                </div>
+
+                <div class="materials-gap-grid">
+                  <div>
+                    <p class="section-kicker">Provided</p>
+                    <h3>已取得资料</h3>
+                    <div class="material-checklist" id="provided-material-list"></div>
+                  </div>
+
+                  <div>
+                    <div class="gap-heading">
+                      <div>
+                        <p class="section-kicker">Missing</p>
+                        <h3>缺失资料</h3>
+                      </div>
+                      <span id="gap-count">0 项</span>
+                    </div>
+                    <div class="gap-list" id="missing-material-list"></div>
+                  </div>
+                </div>
+
+                <div class="fillable-status-card">
+                  <div class="gap-heading">
+                    <div>
+                      <p class="section-kicker">Start Filling</p>
+                      <h3>选择底稿开始填制</h3>
+                    </div>
+                    <span id="fillable-count">0 张底稿</span>
+                  </div>
+                  <div class="fillable-list" id="fillable-workpaper-list"></div>
+                </div>
+
+                <p class="review-reminder">人工复核提醒：这里是执行中异常提示，不是最终审计结论。补齐资料后仍需审计人员判断证据是否充分、适当。</p>
+              </section>
+            </div>
+          </article>
+
+          <article class="content-panel page-section" id="workpaper-editor">
+            <div class="panel-heading">
+              <div>
+                <p class="section-kicker">Workpaper Editor</p>
+                <h2 id="editor-workpaper-title">底稿填制</h2>
+              </div>
+              <button class="secondary-action" id="back-workpaper-builder" type="button">返回底稿生成页</button>
+            </div>
+
+            <p class="builder-intro" id="editor-workpaper-objective">
+              选择底稿后，这里会展示该底稿的填制说明、资料缺口和可填写区域。
+            </p>
+
+            <div class="editor-layout">
+              <section class="builder-card editor-guide-card">
+                <p class="section-kicker">Guide</p>
+                <h3>填制依据与资料状态</h3>
+
+                <div>
+                  <p class="note-title">需要资料</p>
+                  <ul id="editor-materials"></ul>
+                </div>
+
+                <div>
+                  <p class="note-title">当前缺失</p>
+                  <ul id="editor-missing-materials"></ul>
+                </div>
+
+                <div>
+                  <p class="note-title">可自动填字段</p>
+                  <ul id="editor-auto-fields"></ul>
+                </div>
+
+                <div>
+                  <p class="note-title">必须人工复核</p>
+                  <ul id="editor-manual-review"></ul>
+                </div>
+              </section>
+
+              <section class="builder-card editor-work-area">
+                <div class="gap-heading">
+                  <div>
+                    <p class="section-kicker">Draft</p>
+                    <h3 id="editor-work-area-title">填制区</h3>
+                  </div>
+                  <span id="editor-status">人工复核后再导出</span>
+                </div>
+
+                <div class="bank-deposit-editor" id="cash-count-editor" hidden>
+                  <p class="helper-text">
+                    现金监盘记录及追溯表用于记录盘点过程、盘点日实存现金，并在盘点日不是资产负债表日时倒推或顺推至截止日。当前先保留人工复核，后续再补充结构化填制。
+                  </p>
+                  <p class="upload-hint">
+                    现金大额收支抽查和现金收支截止性测试是现金监盘后的延伸检查，建议从这里继续进入相关底稿。
+                  </p>
+                  <div class="bank-local-upload">
+                    <div>
+                      <p class="note-title">本表资料上传</p>
+                      <p class="helper-text">现金主入口负责收集本科目资料；大额收支和截止测试底稿页只使用这里已上传的资料，不重复上传。</p>
+                    </div>
+                    <div class="bank-local-upload-actions">
+                      <label class="secondary-action file-label">
+                        <span>上传库存现金盘点表</span>
+                        <input class="cash-support-input" data-cash-support-type="库存现金盘点表" type="file" accept=".xlsx,.xls,.csv,.pdf,.png,.jpg,.jpeg" multiple />
+                      </label>
+                      <label class="secondary-action file-label">
+                        <span>上传大额收支检查表</span>
+                        <input class="cash-large-source-input cash-support-input" data-cash-support-type="大额收支检查表" data-cash-source-type="大额收支检查表" type="file" accept=".xlsx,.xls,.csv,.pdf" multiple />
+                      </label>
+                      <label class="secondary-action file-label">
+                        <span>上传截止测试资料</span>
+                        <input class="cash-cutoff-source-input cash-support-input" data-cash-support-type="截止测试资料" data-cash-source-type="截止测试资料" type="file" accept=".xlsx,.xls,.csv,.pdf" multiple />
+                      </label>
+                      <label class="secondary-action file-label">
+                        <span>上传其他资料</span>
+                        <input class="cash-support-input" data-cash-support-type="其他资料" type="file" multiple />
+                      </label>
+                    </div>
+                    <div class="other-support-file-list" id="cash-support-list"></div>
+                  <p class="upload-hint" id="cash-count-upload-status">
+                      已上传的大额收支检查表和截止测试资料，会在对应底稿页用于生成填制记录。
+                    </p>
+                  </div>
+                  <section class="cash-count-manual-card">
+                    <div class="gap-heading">
+                      <div>
+                        <p class="section-kicker">Manual Fill</p>
+                        <h4>手动录入盘点数据</h4>
+                      </div>
+                      <button class="primary-action" id="save-cash-count-workpaper" type="button">导出货币资金底稿</button>
+                    </div>
+                    <p class="helper-text">
+                      适合现场数完现金后直接录入。系统按公式计算盘点差异和报表日追溯金额，盘点过程、签字和差异原因仍需人工复核。
+                    </p>
+                    <div class="cash-count-manual-grid">
+                      <div class="cash-count-input-panel">
+                        <label>
+                          <span>盘点日期</span>
+                          <input data-cash-count-field="countDate" type="text" inputmode="numeric" placeholder="如 2025/12/18" />
+                        </label>
+                        <label>
+                          <span>上一日账面库存余额</span>
+                          <input data-cash-count-field="previousBookBalance" type="text" inputmode="decimal" placeholder="0.00" />
+                        </label>
+                        <label>
+                          <span>盘点日未记账传票收入金额</span>
+                          <input data-cash-count-field="unrecordedIncome" type="text" inputmode="decimal" placeholder="0.00" />
+                        </label>
+                        <label>
+                          <span>盘点日未记账传票付出金额</span>
+                          <input data-cash-count-field="unrecordedPayment" type="text" inputmode="decimal" placeholder="0.00" />
+                        </label>
+                        <label>
+                          <span>报表日至查账日现金付出总额（+）</span>
+                          <input data-cash-count-field="reportToCountPayment" type="text" inputmode="decimal" placeholder="0.00" />
+                        </label>
+                        <label>
+                          <span>报表日至查账日现金收入总额（-）</span>
+                          <input data-cash-count-field="reportToCountIncome" type="text" inputmode="decimal" placeholder="0.00" />
+                        </label>
+                        <label>
+                          <span>白条抵库张数</span>
+                          <input data-cash-count-field="whiteNoteCount" type="text" inputmode="numeric" placeholder="0" />
+                        </label>
+                        <label>
+                          <span>白条抵库金额</span>
+                          <input data-cash-count-field="whiteNoteAmount" type="text" inputmode="decimal" placeholder="0.00" />
+                        </label>
+                      </div>
+                      <div>
+                        <div class="cash-denomination-table" id="cash-denomination-table"></div>
+                        <label class="cash-count-note">
+                          <span>差异原因说明</span>
+                          <textarea data-cash-count-field="differenceReason" placeholder="如存在长短款或白条抵库，请简要说明。"></textarea>
+                        </label>
+                      </div>
+                    </div>
+                    <div class="cash-count-summary-grid" id="cash-count-summary"></div>
+                  </section>
+                  <div class="related-workpaper-links">
+                    <p class="note-title">相关底稿</p>
+                    <button class="secondary-action related-workpaper-link" id="open-cash-large-transactions-workpaper" type="button">
+                      查看/填制现金大额收支抽查表
+                    </button>
+                    <button class="secondary-action related-workpaper-link" id="open-cash-cutoff-workpaper" type="button">
+                      查看/填制现金收支截止性测试
+                    </button>
+                  </div>
+                </div>
+
+                <div class="large-transactions-editor" id="cash-large-transactions-editor" hidden>
+                  <p class="helper-text">
+                    本表可从抽凭中心选择样本，或从“现金监盘记录及追溯表”页面已上传的大额收支检查表生成；审查结果 1-6 保留人工核对。
+                  </p>
+                  <div class="editor-actions">
+                    <button class="secondary-action" id="select-cash-large-from-sampling" type="button">从抽凭中心选择样本</button>
+                    <button class="secondary-action" id="parse-cash-large-transactions" type="button">从已上传大额收支检查表生成</button>
+                    <button class="primary-action" id="save-cash-large-transactions-workpaper" type="button">导出货币资金底稿</button>
+                  </div>
+                  <p class="upload-hint" id="cash-large-transactions-status">
+                    请先在“现金监盘记录及追溯表”上传大额收支检查表，或后续从抽凭中心选择样本。
+                  </p>
+                  <div class="large-transaction-header">
+                    <span>月</span>
+                    <span>日</span>
+                    <span>凭证号</span>
+                    <span>摘要</span>
+                    <span>对方科目</span>
+                    <span>借方金额</span>
+                    <span>贷方金额</span>
+                  </div>
+                  <div class="large-transaction-rows" id="cash-large-transaction-rows"></div>
+                  <div class="editor-actions">
+                    <button class="secondary-action" id="back-cash-count-from-large-workpaper" type="button">返回现金监盘记录及追溯表</button>
+                    <button class="secondary-action" id="add-cash-large-transaction-row" type="button">新增抽查行</button>
+                  </div>
+                </div>
+
+                <div class="large-transactions-editor" id="cash-cutoff-editor" hidden>
+                  <p class="helper-text">
+                    本表可从抽凭中心选择样本，或从“现金监盘记录及追溯表”页面已上传的截止测试资料生成；归属期保留人工核对。
+                  </p>
+                  <div class="editor-actions">
+                    <label class="inline-field">
+                      截止日
+                      <input id="cash-cutoff-date" type="date" />
+                    </label>
+                    <button class="secondary-action" id="select-cash-cutoff-from-sampling" type="button">从抽凭中心选择样本</button>
+                    <button class="secondary-action" id="parse-cash-cutoff" type="button">从已上传截止测试资料生成</button>
+                    <button class="primary-action" id="save-cash-cutoff-workpaper" type="button">导出货币资金底稿</button>
+                  </div>
+                  <p class="upload-hint" id="cash-cutoff-status">
+                    请先在“现金监盘记录及追溯表”上传截止测试资料，或后续从抽凭中心选择样本。
+                  </p>
+                  <div class="cutoff-transaction-header">
+                    <span>年</span>
+                    <span>月</span>
+                    <span>日</span>
+                    <span>凭证号</span>
+                    <span>摘要</span>
+                    <span>借方金额</span>
+                    <span>贷方金额</span>
+                  </div>
+                  <div class="large-transaction-rows" id="cash-cutoff-transaction-rows"></div>
+                  <div class="editor-actions">
+                    <button class="secondary-action" id="back-cash-count-from-cutoff-workpaper" type="button">返回现金监盘记录及追溯表</button>
+                    <button class="secondary-action" id="add-cash-cutoff-row" type="button">新增截止测试行</button>
+                  </div>
+                </div>
+
+                <div class="bank-deposit-editor" id="bank-deposit-editor">
+                  <p class="helper-text">
+                    第一版先把“银行存款测试表”的核心字段做成可录入草稿。后续再从科目余额表解析银行名称、银行账号和期末未审数，并写入货币资金底稿副本。
+                  </p>
+                  <div class="bank-local-upload">
+                    <div>
+                      <p class="note-title">本表资料上传</p>
+                      <p class="helper-text">科目余额表可复用底稿生成页已上传资料；本表主要补充银行对账单、余额调节表和大额收付检查表，系统会按账号和金额匹配到下方账户行。</p>
+                    </div>
+                    <div class="bank-local-upload-actions">
+                      <div class="bank-upload-control">
+                        <label class="secondary-action file-label">
+                          <span id="bank-statement-label">上传银行对账单</span>
+                          <input id="bank-statement-input" type="file" accept=".xlsx,.png,.jpg,.jpeg" multiple />
+                        </label>
+                        <button class="upload-clear" data-clear-bank-file="statement" type="button" hidden>×</button>
+                      </div>
+                      <div class="bank-upload-control">
+                        <label class="secondary-action file-label">
+                          <span id="bank-reconciliation-label">上传余额调节表</span>
+                          <input id="bank-reconciliation-input" type="file" accept=".xlsx" multiple />
+                        </label>
+                        <button class="upload-clear" data-clear-bank-file="reconciliation" type="button" hidden>×</button>
+                      </div>
+                      <div class="bank-upload-control">
+                        <label class="secondary-action file-label">
+                          <span id="bank-large-transactions-label">上传大额收付检查表</span>
+                          <input id="bank-large-transactions-input" type="file" accept=".xlsx,.xls,.csv,.pdf" multiple />
+                        </label>
+                        <button class="upload-clear" data-clear-bank-file="largeTransactions" type="button" hidden>×</button>
+                      </div>
+                      <div class="bank-upload-control">
+                        <label class="secondary-action file-label">
+                          <span id="bank-cutoff-transactions-label">上传截止测试资料</span>
+                          <input id="bank-cutoff-transactions-input" type="file" accept=".xlsx,.xls,.csv,.pdf" multiple />
+                        </label>
+                        <button class="upload-clear" data-clear-bank-file="cutoffTransactions" type="button" hidden>×</button>
+                      </div>
+                      <button class="primary-action" id="rematch-bank-support" type="button">开始匹配</button>
+                    </div>
+                    <p class="upload-hint" id="bank-local-upload-status">
+                      如已在底稿生成页上传科目余额表，可直接补充本表资料后点击“开始匹配”。匹配成功后会更新下方账户行状态。
+                    </p>
+                  </div>
+                  <div class="bank-entry-header">
+                    <span>银行名称</span>
+                    <span>银行账号</span>
+                    <span>期末未审数</span>
+                    <span>对账单</span>
+                    <span>调节相符</span>
+                    <span>函证</span>
+                    <span>审计调整</span>
+                  </div>
+                  <div class="bank-account-rows" id="bank-account-rows"></div>
+                  <div class="editor-actions">
+                    <button class="secondary-action" id="add-bank-account-row" type="button">新增账户行</button>
+                    <button class="primary-action" id="save-bank-workpaper" type="button">导出货币资金底稿</button>
+                  </div>
+                  <p class="upload-hint" id="save-workpaper-status">
+                    生成时会复制原模板，并把当前货币资金底稿内容写入副本，不覆盖模板原件。
+                  </p>
+                  <div class="related-workpaper-links">
+                    <p class="note-title">相关底稿</p>
+                    <button class="secondary-action related-workpaper-link" id="open-bank-reconciliation-workpaper" type="button">
+                      查看/填制存款余额调节表
+                    </button>
+                    <button class="secondary-action related-workpaper-link" id="open-bank-large-transactions-workpaper" type="button">
+                      查看/填制银行存款大额收支抽查表
+                    </button>
+                    <button class="secondary-action related-workpaper-link" id="open-bank-cutoff-workpaper" type="button">
+                      查看/填制银行存款收支截止性测试
+                    </button>
+                  </div>
+                </div>
+
+                <div class="bank-reconciliation-editor" id="bank-reconciliation-editor" hidden>
+                  <p class="helper-text">
+                    银行存款余额调节表按银行账户逐张填制。第一版先基于银行存款测试表已识别的账户、对账单和余额调节表，生成每个账户的填制卡片。
+                  </p>
+                  <div class="bank-reconciliation-accounts" id="bank-reconciliation-accounts"></div>
+                  <div class="editor-actions">
+                    <button class="secondary-action" id="back-bank-deposit-workpaper" type="button">返回银行存款测试表</button>
+                    <button class="primary-action" id="save-bank-reconciliation-workpaper" type="button">导出货币资金底稿</button>
+                  </div>
+                  <p class="upload-hint" id="save-bank-reconciliation-status">
+                    生成时会同时写入银行存款测试表和每个账户的存款余额调节表，形成货币资金底稿副本。
+                  </p>
+                </div>
+
+                <div class="large-transactions-editor" id="bank-large-transactions-editor" hidden>
+                  <p class="helper-text">
+                    本表先从“银行存款测试表”页面上传的大额收付检查表中读取月、日、凭证号、摘要、对方科目、借贷金额；审查结果 1-6 保留人工核对。
+                  </p>
+                  <p class="upload-hint">
+                    建议上传表头包含：月、日、凭证号、摘要、借方金额、借方对应科目、贷方金额、贷方对应科目。若资料只有一列“对应科目”，系统会按该列直接读取，不自动判断或补充科目。
+                  </p>
+                  <div class="editor-actions">
+                    <button class="secondary-action" id="select-bank-large-from-sampling" type="button">从抽凭中心选择样本</button>
+                    <button class="secondary-action" id="parse-bank-large-transactions" type="button">从已上传大额收支检查表生成</button>
+                    <button class="primary-action" id="save-bank-large-transactions-workpaper" type="button">导出货币资金底稿</button>
+                  </div>
+                  <p class="upload-hint" id="bank-large-transactions-status">
+                    请先在“银行存款测试表”上传大额收付检查表，再回到这里生成抽查表数据。
+                  </p>
+                  <div class="large-transaction-header">
+                    <span>月</span>
+                    <span>日</span>
+                    <span>凭证号</span>
+                    <span>摘要</span>
+                    <span>对方科目</span>
+                    <span>借方金额</span>
+                    <span>贷方金额</span>
+                  </div>
+                  <div class="large-transaction-rows" id="bank-large-transaction-rows"></div>
+                  <div class="editor-actions">
+                    <button class="secondary-action" id="back-bank-deposit-from-large-workpaper" type="button">返回银行存款测试表</button>
+                    <button class="secondary-action" id="add-bank-large-transaction-row" type="button">新增抽查行</button>
+                  </div>
+                </div>
+
+                <div class="large-transactions-editor" id="bank-cutoff-editor" hidden>
+                  <p class="helper-text">
+                    本表先从“银行存款测试表”页面上传的截止测试资料中读取年、月、日、凭证号、摘要和借贷金额；收支归属期保留人工核对。
+                  </p>
+                  <p class="upload-hint">
+                    系统按截止日自动分为上半段和下半段：截止日及以前填在上方，截止日以后填在下方。右侧“审计年度/以后年度”不自动勾选。
+                  </p>
+                  <div class="editor-actions">
+                    <label class="inline-field">
+                      截止日
+                      <input id="bank-cutoff-date" type="date" />
+                    </label>
+                    <button class="secondary-action" id="select-bank-cutoff-from-sampling" type="button">从抽凭中心选择样本</button>
+                    <button class="secondary-action" id="parse-bank-cutoff" type="button">从已上传截止测试资料生成</button>
+                    <button class="primary-action" id="save-bank-cutoff-workpaper" type="button">导出货币资金底稿</button>
+                  </div>
+                  <p class="upload-hint" id="bank-cutoff-status">
+                    请先在“银行存款测试表”上传截止测试资料，再回到这里生成截止测试数据。
+                  </p>
+                  <div class="cutoff-transaction-header">
+                    <span>年</span>
+                    <span>月</span>
+                    <span>日</span>
+                    <span>凭证号</span>
+                    <span>摘要</span>
+                    <span>借方金额</span>
+                    <span>贷方金额</span>
+                  </div>
+                  <div class="large-transaction-rows" id="bank-cutoff-transaction-rows"></div>
+                  <div class="editor-actions">
+                    <button class="secondary-action" id="back-bank-deposit-from-cutoff-workpaper" type="button">返回银行存款测试表</button>
+                    <button class="secondary-action" id="add-bank-cutoff-row" type="button">新增截止测试行</button>
+                  </div>
+                </div>
+
+                <div class="other-monetary-editor" id="other-monetary-editor" hidden>
+                  <p class="helper-text">
+                    第一版先从科目余额表识别 1012 或“其他货币资金”明细项目，自动填项目名称、开户银行、账号、期末未审数和风险提示；对账单、调节相符和调整金额保留人工复核。
+                  </p>
+                  <div class="bank-local-upload other-monetary-local-upload">
+                    <div>
+                      <p class="note-title">本表资料上传</p>
+                      <p class="helper-text">科目余额表可复用底稿生成页已上传资料；本表可补充调节表、对账单、大额收付检查表和其他支持资料。当前只登记资料，不自动判断结论。</p>
+                    </div>
+                    <div class="bank-local-upload-actions">
+                      <label class="secondary-action file-label">
+                        <span>上传调节表</span>
+                        <input class="other-monetary-support-input" data-other-support-type="调节表" type="file" accept=".xlsx,.xls,.csv,.png,.jpg,.jpeg,.pdf" multiple />
+                      </label>
+                      <label class="secondary-action file-label">
+                        <span>上传对账单</span>
+                        <input class="other-monetary-support-input" data-other-support-type="对账单" type="file" accept=".xlsx,.xls,.csv,.png,.jpg,.jpeg,.pdf" multiple />
+                      </label>
+                      <label class="secondary-action file-label">
+                        <span>上传大额收付检查表</span>
+                        <input class="other-monetary-support-input" data-other-support-type="大额收付检查表" type="file" accept=".xlsx,.xls,.csv,.pdf" multiple />
+                      </label>
+                      <label class="secondary-action file-label">
+                        <span>上传截止测试资料</span>
+                        <input class="other-monetary-support-input" data-other-support-type="截止测试资料" type="file" accept=".xlsx,.xls,.csv,.pdf" multiple />
+                      </label>
+                      <label class="secondary-action file-label">
+                        <span>上传其他支持资料</span>
+                        <input class="other-monetary-support-input" data-other-support-type="其他支持资料" type="file" multiple />
+                      </label>
+                      <button class="primary-action" id="match-other-monetary-support" type="button">开始匹配</button>
+                    </div>
+                    <div class="other-support-file-list" id="other-monetary-support-list"></div>
+                    <p class="upload-hint" id="other-monetary-upload-status">
+                      资料登记后会保留在当前页面，后续可用于解析对账单、调节表和大额收付检查。
+                    </p>
+                  </div>
+                  <div class="other-monetary-entry-header">
+                    <span>项目名称</span>
+                    <span>开户银行</span>
+                    <span>账号</span>
+                    <span>期末未审数</span>
+                    <span>对账单</span>
+                    <span>调节相符</span>
+                    <span>审计调整</span>
+                    <span>风险提示 / 复核说明</span>
+                  </div>
+                  <div class="other-monetary-rows" id="other-monetary-rows"></div>
+                  <div class="editor-actions">
+                    <button class="secondary-action" id="add-other-monetary-row" type="button">新增项目行</button>
+                    <button class="primary-action" id="save-other-monetary-workpaper" type="button">导出货币资金底稿</button>
+                  </div>
+                  <p class="upload-hint" id="save-other-monetary-status">
+                    生成时会写入同一个货币资金底稿副本，不覆盖模板原件；系统提示只作为复核线索，不替代审计结论。
+                  </p>
+                  <div class="related-workpaper-links">
+                    <p class="note-title">相关底稿</p>
+                    <button class="secondary-action related-workpaper-link" id="open-other-monetary-large-transactions-workpaper" type="button">
+                      查看/填制其他货币资金大额收支抽查表
+                    </button>
+                    <button class="secondary-action related-workpaper-link" id="open-other-monetary-cutoff-workpaper" type="button">
+                      查看/填制其他货币资金收支截止性测试
+                    </button>
+                  </div>
+                </div>
+
+                <div class="large-transactions-editor" id="other-monetary-large-transactions-editor" hidden>
+                  <p class="helper-text">
+                    本表先从“其他货币资金测试表”页面上传的大额收付检查表中读取月、日、凭证号、摘要、对方科目、借贷金额；审查结果 1-6 保留人工核对。
+                  </p>
+                  <p class="upload-hint">
+                    建议上传表头包含：月、日、凭证号、摘要、借方金额、借方对应科目、贷方金额、贷方对应科目。若资料只有一列“对应科目”，系统会按该列直接读取，不自动判断或补充科目。
+                  </p>
+                  <div class="editor-actions">
+                    <button class="secondary-action" id="select-other-monetary-large-from-sampling" type="button">从抽凭中心选择样本</button>
+                    <button class="secondary-action" id="parse-other-monetary-large-transactions" type="button">从已上传大额收支检查表生成</button>
+                    <button class="primary-action" id="save-other-monetary-large-transactions-workpaper" type="button">导出货币资金底稿</button>
+                  </div>
+                  <p class="upload-hint" id="other-monetary-large-transactions-status">
+                    请先在“其他货币资金测试表”上传大额收付检查表，再回到这里生成抽查表数据。
+                  </p>
+                  <div class="large-transaction-header">
+                    <span>月</span>
+                    <span>日</span>
+                    <span>凭证号</span>
+                    <span>摘要</span>
+                    <span>对方科目</span>
+                    <span>借方金额</span>
+                    <span>贷方金额</span>
+                  </div>
+                  <div class="large-transaction-rows" id="other-monetary-large-transaction-rows"></div>
+                  <div class="editor-actions">
+                    <button class="secondary-action" id="back-other-monetary-workpaper" type="button">返回其他货币资金测试表</button>
+                    <button class="secondary-action" id="add-other-monetary-large-transaction-row" type="button">新增抽查行</button>
+                  </div>
+                </div>
+
+                <div class="large-transactions-editor" id="other-monetary-cutoff-editor" hidden>
+                  <p class="helper-text">
+                    本表先从“其他货币资金测试表”页面上传的截止测试资料中读取年、月、日、凭证号、摘要和借贷金额；收支归属期保留人工核对。
+                  </p>
+                  <p class="upload-hint">
+                    系统按截止日自动分为上半段和下半段：截止日及以前填在上方，截止日以后填在下方。右侧“审计年度/以后年度”不自动勾选。
+                  </p>
+                  <div class="editor-actions">
+                    <label class="inline-field">
+                      截止日
+                      <input id="other-monetary-cutoff-date" type="date" />
+                    </label>
+                    <button class="secondary-action" id="select-other-monetary-cutoff-from-sampling" type="button">从抽凭中心选择样本</button>
+                    <button class="secondary-action" id="parse-other-monetary-cutoff" type="button">从已上传截止测试资料生成</button>
+                    <button class="primary-action" id="save-other-monetary-cutoff-workpaper" type="button">导出货币资金底稿</button>
+                  </div>
+                  <p class="upload-hint" id="other-monetary-cutoff-status">
+                    请先在“其他货币资金测试表”上传截止测试资料，再回到这里生成截止测试数据。
+                  </p>
+                  <div class="cutoff-transaction-header">
+                    <span>年</span>
+                    <span>月</span>
+                    <span>日</span>
+                    <span>凭证号</span>
+                    <span>摘要</span>
+                    <span>借方金额</span>
+                    <span>贷方金额</span>
+                  </div>
+                  <div class="large-transaction-rows" id="other-monetary-cutoff-transaction-rows"></div>
+                  <div class="editor-actions">
+                    <button class="secondary-action" id="back-other-monetary-from-cutoff-workpaper" type="button">返回其他货币资金测试表</button>
+                    <button class="secondary-action" id="add-other-monetary-cutoff-row" type="button">新增截止测试行</button>
+                  </div>
+                </div>
+
+                <div class="editor-placeholder" id="editor-placeholder">
+                  这张底稿暂未开放结构化填制区。当前可以先查看左侧填制规则和资料缺口，后续会共用这个页面逐张补充自动填制能力。
+                </div>
+              </section>
+            </div>
+          </article>
+
+          <article class="content-panel page-section" id="templates">
+            <div class="template-management">
+              <section class="template-summary-grid" aria-label="模板统计">
+                <div>
+                  <span>底稿套装</span>
+                  <strong id="template-workpaper-count">0</strong>
+                </div>
+                <div>
+                  <span>询证函模板</span>
+                  <strong id="template-confirmation-count">0</strong>
+                </div>
+                <div>
+                  <span>默认模板</span>
+                  <strong id="template-default-count">0</strong>
+                </div>
+              </section>
+
+              <section class="template-console">
+                <div class="template-list-panel">
+                  <div class="template-filter-row" role="tablist" aria-label="模板分类">
+                    <button class="template-filter active" data-template-filter="all" type="button">全部</button>
+                    <button class="template-filter" data-template-filter="workpaper-suite" type="button">底稿套装</button>
+                    <button class="template-filter" data-template-filter="bank-confirmation" type="button">银行询证函</button>
+                    <button class="template-filter" data-template-filter="counterparty-confirmation" type="button">往来询证函</button>
+                  </div>
+                  <div class="template-table" id="template-table"></div>
+                </div>
+
+                <aside class="template-detail-panel" aria-labelledby="template-detail-title">
+                  <p class="section-kicker">Template Detail</p>
+                  <h3 id="template-detail-title">模板信息</h3>
+                  <div id="template-detail">
+                    <p class="helper-text">选择左侧模板后，这里会显示用途和后续联动方向。</p>
+                  </div>
+                </aside>
+              </section>
+            </div>
+          </article>
+
+          <article class="content-panel page-section" id="confirmation-center">
+            <section class="confirmation-planning">
+              <div class="confirmation-hero">
+                <div>
+                  <p class="section-kicker">Confirmation Center</p>
+                  <h2>函证中心</h2>
+                  <p>
+                    面向银行账户、往来客户和供应商的函证规划模块。未来将根据底稿信息、账户余额、
+                    金额重要性和往来明细，自动识别建议函证对象，并生成可复核的函证清单。
+                  </p>
+                </div>
+                <span class="coming-soon-pill">暂未开放 · 敬请期待</span>
+              </div>
+
+              <div class="confirmation-concept-grid">
+                <article>
+                  <span>01</span>
+                  <h3>从底稿识别函证对象</h3>
+                  <p>读取银行存款测试表、其他货币资金测试表和往来明细，整理可函证账户、客户和供应商。</p>
+                </article>
+                <article>
+                  <span>02</span>
+                  <h3>结合金额和重要性排序</h3>
+                  <p>参考期末余额、发生额、重要性水平和异常关键词，优先提示高金额或高风险项目。</p>
+                </article>
+                <article>
+                  <span>03</span>
+                  <h3>保留人工复核闭环</h3>
+                  <p>系统只生成建议函证清单和草稿，不自动替代审计人员选择样本、确认对象和发送函证。</p>
+                </article>
+              </div>
+
+              <div class="confirmation-preview">
+                <div>
+                  <strong>计划识别范围</strong>
+                  <ul>
+                    <li>银行账户：开户行、账号、期末余额、函证状态</li>
+                    <li>往来客户：应收、预收、合同负债等余额较大项目</li>
+                    <li>供应商及其他往来：应付、预付、其他应收应付等明细</li>
+                  </ul>
+                </div>
+                <div>
+                  <strong>后续输出方向</strong>
+                  <ul>
+                    <li>建议函证对象清单</li>
+                    <li>银行询证函 / 企业往来询证函副本</li>
+                    <li>未函证原因、替代程序和回函跟踪提示</li>
+                  </ul>
+                </div>
+              </div>
+            </section>
+          </article>
+
+          <article class="content-panel page-section" id="settings">
+            <div class="settings-management">
+              <header class="settings-page-header">
+                <p class="section-kicker">Settings</p>
+                <h2>合规与本地配置</h2>
+              </header>
+
+              <div class="settings-layout">
+                <aside class="settings-menu" aria-label="设置分类">
+                  <a href="#settings-privacy" class="settings-menu-item active">资料隐私</a>
+                  <a href="#settings-ai" class="settings-menu-item">AI 使用边界</a>
+                  <a href="#settings-template" class="settings-menu-item">模板与导出</a>
+                  <a href="#settings-review" class="settings-menu-item">人工复核</a>
+                </aside>
+
+                <section class="settings-content">
+                  <section class="settings-section" id="settings-privacy">
+                    <h3>资料隐私</h3>
+                    <div class="settings-list">
+                      <div class="settings-row">
+                        <div>
+                          <strong>真实审计资料外传</strong>
+                          <p>默认不联网发送真实客户资料。</p>
+                        </div>
+                        <span class="settings-value muted">当前关闭</span>
+                      </div>
+                      <div class="settings-row">
+                        <div>
+                          <strong>本地资料解析</strong>
+                          <p>上传资料仅用于本地解析、匹配和底稿填制辅助。</p>
+                        </div>
+                        <span class="settings-value enabled">当前启用</span>
+                      </div>
+                      <div class="settings-row">
+                        <div>
+                          <strong>演示资料要求</strong>
+                          <p>真实客户资料建议先脱敏后再用于演示。</p>
+                        </div>
+                        <span class="settings-value">建议</span>
+                      </div>
+                    </div>
+                  </section>
+
+                  <section class="settings-section" id="settings-ai">
+                    <h3>AI 使用边界</h3>
+                    <div class="settings-list">
+                      <div class="settings-row">
+                        <div>
+                          <strong>AI 整理回答</strong>
+                          <p>仅基于本地知识库命中资料整理回答。</p>
+                        </div>
+                        <span class="settings-value enabled">当前接入</span>
+                      </div>
+                      <div class="settings-row">
+                        <div>
+                          <strong>无依据回答</strong>
+                          <p>本地检索无依据时，不调用 AI 编造答案。</p>
+                        </div>
+                        <span class="settings-value muted">不允许</span>
+                      </div>
+                      <div class="settings-row">
+                        <div>
+                          <strong>引用与复核提醒</strong>
+                          <p>AI 输出保留引用来源和人工复核提示。</p>
+                        </div>
+                        <span class="settings-value enabled">必须保留</span>
+                      </div>
+                    </div>
+                  </section>
+
+                  <section class="settings-section" id="settings-template">
+                    <h3>模板与导出</h3>
+                    <div class="settings-list">
+                      <div class="settings-row">
+                        <div>
+                          <strong>模板来源</strong>
+                          <p>模板来自项目内置模板库。</p>
+                        </div>
+                        <span class="settings-value">内置模板</span>
+                      </div>
+                      <div class="settings-row">
+                        <div>
+                          <strong>导出规则</strong>
+                          <p>底稿和询证函生成时导出副本。</p>
+                        </div>
+                        <span class="settings-value enabled">强制规则</span>
+                      </div>
+                      <div class="settings-row">
+                        <div>
+                          <strong>自动填制内容</strong>
+                          <p>自动填制结果需人工复核后使用。</p>
+                        </div>
+                        <span class="settings-value">必须复核</span>
+                      </div>
+                    </div>
+                  </section>
+
+                  <section class="settings-section" id="settings-review">
+                    <h3>人工复核</h3>
+                    <div class="settings-list">
+                      <div class="settings-row">
+                        <div>
+                          <strong>资料不足处理</strong>
+                          <p>资料不足时提示缺口，不形成审计结论。</p>
+                        </div>
+                        <span class="settings-value enabled">当前启用</span>
+                      </div>
+                      <div class="settings-row">
+                        <div>
+                          <strong>风险与抽样建议</strong>
+                          <p>系统只提供风险线索和抽样建议。</p>
+                        </div>
+                        <span class="settings-value">辅助提示</span>
+                      </div>
+                      <div class="settings-row">
+                        <div>
+                          <strong>重大错报风险判断</strong>
+                          <p>重大错报风险和审计结论由审计人员判断。</p>
+                        </div>
+                        <span class="settings-value muted">不替代判断</span>
+                      </div>
+                    </div>
+                  </section>
+                </section>
+              </div>
+            </div>
+          </article>
+        </section>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

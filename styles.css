@@ -1913,15 +1913,6 @@ body[data-current-page="overview"] .primary-action {
   margin: 0 auto;
 }
 
-.settings-page-header {
-  padding: 8px 2px 2px;
-}
-
-.settings-page-header h2 {
-  margin-top: 8px;
-  font-size: 30px;
-}
-
 .settings-layout {
   display: grid;
   grid-template-columns: 220px minmax(0, 1fr);

@@ -4065,6 +4065,11 @@ async function parseBankSupportFile(file, mode, statusNode = uploadHint, appendI
   const endpoint =
     mode === "statement" ? "/api/parse-bank-statement" : "/api/parse-bank-reconciliation";
 
+  if (isOnlineDemo) {
+    setStatusText(statusNode, getOnlineDemoMessage());
+    return;
+  }
+
   if (mode !== "statement" && !file.name.toLowerCase().endsWith(".xlsx")) {
     workpaperState.recognitionStatus[mode] = "unsupported";
     setStatusText(statusNode, `已登记“${materialName}”。自动读取第一版先支持 .xlsx 文件，扫描件和图片后续再接 OCR。`);

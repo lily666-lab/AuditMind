@@ -1050,7 +1050,7 @@ landingStartButtons.forEach((button) => {
 });
 
 landingDemoJumpButton?.addEventListener("click", () => {
-  landingFeatureSection?.scrollIntoView({ behavior: "smooth" });
+  window.open("https://www.bilibili.com/video/BV1zfKr6vE9F/", "_blank", "noopener,noreferrer");
 });
 
 brandHomeButton?.addEventListener("click", () => {

@@ -2,8 +2,11 @@ const navItems = document.querySelectorAll(".nav-item");
 const pageSections = document.querySelectorAll(".page-section");
 const pageTitle = document.querySelector("#page-title");
 const LOCAL_HOSTNAMES = new Set(["localhost", "127.0.0.1", "::1"]);
-const isLocalDemo = LOCAL_HOSTNAMES.has(window.location.hostname);
+const forceOnlineDemo = new URLSearchParams(window.location.search).get("demo") === "online";
+const isLocalDemo = LOCAL_HOSTNAMES.has(window.location.hostname) && !forceOnlineDemo;
 const isOnlineDemo = !isLocalDemo;
+const VERIFIED_KNOWLEDGE_DEMO_URL = "knowledge-base/demo/verified-qa.json";
+let verifiedKnowledgeDemoPromise = null;
 const newProjectShortcutButton = document.querySelector("#new-project-shortcut");
 const brandHomeButton = document.querySelector("#brand-home");
 const landingStartButtons = document.querySelectorAll(".landing-start");
@@ -92,6 +95,8 @@ const knowledgeDocumentList = document.querySelector("#knowledge-document-list")
 const knowledgeQuestionInput = document.querySelector("#knowledge-question");
 const askKnowledgeButton = document.querySelector("#ask-knowledge");
 const askKnowledgeAiButton = document.querySelector("#ask-knowledge-ai");
+const knowledgeSuggestionButtons = document.querySelectorAll(".knowledge-suggestion");
+const knowledgeDemoNotice = document.querySelector("#knowledge-demo-notice");
 const knowledgeStatus = document.querySelector("#knowledge-status");
 const knowledgeAnswer = document.querySelector("#knowledge-answer");
 const fillableCount = document.querySelector("#fillable-count");
@@ -1021,23 +1026,119 @@ function getOnlineDemoMessage() {
 }
 
 function renderOnlineKnowledgeDemo() {
+  if (knowledgeDemoNotice) {
+    knowledgeDemoNotice.hidden = false;
+  }
+
   if (knowledgeDocumentList) {
     knowledgeDocumentList.innerHTML = `
       <div class="empty-gap">
-        在线展示版不读取本地知识库文件。完整 RAG 检索、引用依据和 AI 整理回答会在本地演示视频中展示。
+        在线展示版仅展示经过人工核对的公开案例，不读取用户本地资料。
       </div>
     `;
   }
 
+  if (knowledgeQuestionInput) {
+    knowledgeQuestionInput.readOnly = true;
+    knowledgeQuestionInput.placeholder = "请点击上方推荐问题查看已验证案例";
+  }
+
+  if (askKnowledgeButton) {
+    askKnowledgeButton.hidden = true;
+  }
+
+  if (askKnowledgeAiButton) {
+    askKnowledgeAiButton.hidden = true;
+  }
+
   if (knowledgeStatus) {
-    knowledgeStatus.textContent = "在线展示版已隐藏真实知识库接口。";
+    knowledgeStatus.textContent = "点击推荐问题，查看已验证的知识库案例。";
   }
 
   if (knowledgeAnswer) {
     knowledgeAnswer.innerHTML = `
-      <p class="note-title">演示模式</p>
-      <p>${getOnlineDemoMessage()}</p>
-      <p>正式演示时，系统会先检索本地 Markdown 知识库，再输出带引用、可人工复核的回答。</p>
+      <p class="note-title">已验证案例演示</p>
+      <p>请选择上方问题。案例回答仅根据公开演示知识库整理，并展示对应文件、章节和原文摘录。</p>
+      <p>自由问答、项目资料解析和 DeepSeek 整理仍保留在本地完整版中。</p>
+    `;
+  }
+}
+
+async function getVerifiedKnowledgeDemos() {
+  if (window.AUDITMIND_VERIFIED_KNOWLEDGE_DEMO) {
+    return window.AUDITMIND_VERIFIED_KNOWLEDGE_DEMO;
+  }
+
+  if (!verifiedKnowledgeDemoPromise) {
+    verifiedKnowledgeDemoPromise = fetch(VERIFIED_KNOWLEDGE_DEMO_URL).then(async (response) => {
+      if (!response.ok) {
+        throw new Error(`案例知识库加载失败：HTTP ${response.status}`);
+      }
+
+      return response.json();
+    });
+  }
+
+  return verifiedKnowledgeDemoPromise;
+}
+
+async function renderVerifiedKnowledgeDemo(question) {
+  if (!knowledgeAnswer || !knowledgeStatus) {
+    return;
+  }
+
+  knowledgeStatus.textContent = "正在读取已验证案例...";
+
+  try {
+    const demoData = await getVerifiedKnowledgeDemos();
+    const demoItem = (demoData.items || []).find((item) => item.question === question);
+
+    if (!demoItem) {
+      knowledgeStatus.textContent = "请选择上方已验证问题。";
+      knowledgeAnswer.innerHTML = `
+        <p class="note-title">当前问题尚未验证</p>
+        <p>线上展示版只提供已完成来源核对的案例，避免根据不充分资料生成答案。</p>
+      `;
+      return;
+    }
+
+    const points = (demoItem.keyPoints || [])
+      .map((point) => `<li>${escapeHtml(point)}</li>`)
+      .join("");
+    const citations = (demoItem.citations || [])
+      .map(
+        (citation) => `
+          <div class="knowledge-citation-item">
+            <span>${escapeHtml(citation.section)}</span>
+            <small>${escapeHtml(citation.source)}</small>
+            <p>${escapeHtml(citation.excerpt)}</p>
+          </div>
+        `,
+      )
+      .join("");
+
+    knowledgeAnswer.innerHTML = `
+      <p class="note-title">已验证案例回答 · ${escapeHtml(demoData.sourceType || "操作参考")}</p>
+      <div class="knowledge-answer-text">${escapeHtml(demoItem.summary)}</div>
+      <div class="knowledge-review-block">
+        <strong>操作要点</strong>
+        <ul>${points}</ul>
+      </div>
+      <div class="knowledge-citation-block">
+        <strong>引用来源</strong>
+        ${citations}
+      </div>
+      <div class="knowledge-review-block">
+        <strong>人工复核提醒</strong>
+        <p>${escapeHtml(demoData.notice || "以上内容仍需人工复核。")}</p>
+      </div>
+    `;
+    knowledgeStatus.textContent = "已显示经过来源核对的案例回答。";
+  } catch (error) {
+    knowledgeStatus.textContent = "案例知识库暂时无法加载。";
+    knowledgeAnswer.innerHTML = `
+      <p class="note-title">加载失败</p>
+      <p>${escapeHtml(error.message || "请稍后重试。")}</p>
     `;
   }
 }
@@ -1283,6 +1384,24 @@ askKnowledgeButton?.addEventListener("click", async () => {
 
 askKnowledgeAiButton?.addEventListener("click", async () => {
   await askKnowledgeBaseWithAi();
+});
+
+knowledgeSuggestionButtons.forEach((button) => {
+  button.addEventListener("click", async () => {
+    if (!knowledgeQuestionInput) {
+      return;
+    }
+
+    const question = button.dataset.question || button.textContent.trim();
+    knowledgeQuestionInput.value = question;
+    knowledgeQuestionInput.focus();
+    if (isOnlineDemo) {
+      await renderVerifiedKnowledgeDemo(question);
+      return;
+    }
+
+    await askKnowledgeBase();
+  });
 });
 
 knowledgeQuestionInput?.addEventListener("keydown", async (event) => {
@@ -2284,12 +2403,12 @@ async function loadCashRuleConfig() {
 }
 
 async function loadKnowledgeDocuments() {
-  if (!knowledgeDocumentList) {
+  if (isOnlineDemo) {
+    renderOnlineKnowledgeDemo();
     return;
   }
 
-  if (isOnlineDemo) {
-    renderOnlineKnowledgeDemo();
+  if (!knowledgeDocumentList) {
     return;
   }
 

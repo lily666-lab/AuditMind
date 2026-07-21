@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>AuditMind - AI 审计工作流助手</title>
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles.css?v=knowledge-demo-3" />
   </head>
   <body data-view="landing" data-current-page="overview">
     <section class="landing-page" id="landing-page" aria-label="AuditMind 产品介绍">
@@ -465,6 +465,22 @@
               <section class="knowledge-qa-panel" aria-labelledby="knowledge-qa-title">
                 <p class="section-kicker">Citation Q&A</p>
                 <h3 id="knowledge-qa-title">带引用问答</h3>
+                <div class="knowledge-suggestions" aria-label="推荐问题">
+                  <p>不知道从哪里开始？试试这些已覆盖的知识主题：</p>
+                  <div class="knowledge-suggestion-list">
+                    <button type="button" class="knowledge-suggestion" data-question="货币资金底稿应该怎么做？">货币资金底稿应该怎么做？</button>
+                    <button type="button" class="knowledge-suggestion" data-question="银行存款余额调节表需要检查什么？">银行存款余额调节表需要检查什么？</button>
+                    <button type="button" class="knowledge-suggestion" data-question="银行函证有哪些关键控制要求？">银行函证有哪些关键控制要求？</button>
+                    <button type="button" class="knowledge-suggestion" data-question="库存现金监盘需要记录哪些内容？">库存现金监盘需要记录哪些内容？</button>
+                    <button type="button" class="knowledge-suggestion" data-question="银行存款截止测试需要执行哪些程序？">银行存款截止测试需要执行哪些程序？</button>
+                  </div>
+                </div>
+                <div class="knowledge-demo-notice" id="knowledge-demo-notice" hidden>
+                  <strong>公开演示说明</strong>
+                  <p>
+                    为保护审计资料与 API 密钥安全，在线版暂不开放自由提问，仅展示经过来源核对的示例问答。完整本地版支持知识库检索与 AI 整理。
+                  </p>
+                </div>
                 <textarea
                   id="knowledge-question"
                   rows="4"
@@ -1495,6 +1511,7 @@
       </main>
     </div>
 
-    <script src="script.js"></script>
+    <script src="knowledge-base/demo/verified-qa.js?v=knowledge-demo-1"></script>
+    <script src="script.js?v=knowledge-demo-4"></script>
   </body>
 </html>

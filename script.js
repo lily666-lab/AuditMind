@@ -5,6 +5,9 @@ const LOCAL_HOSTNAMES = new Set(["localhost", "127.0.0.1", "::1"]);
 const forceOnlineDemo = new URLSearchParams(window.location.search).get("demo") === "online";
 const isLocalDemo = LOCAL_HOSTNAMES.has(window.location.hostname) && !forceOnlineDemo;
 const isOnlineDemo = !isLocalDemo;
+// Local product switch only. Public static showcase never creates a localhost frame.
+const useMiniMvpKnowledge = isLocalDemo && location.protocol === "http:" && location.port === "4173"
+  && new URLSearchParams(location.search).get("kb") !== "legacy";
 const VERIFIED_KNOWLEDGE_DEMO_URL = "knowledge-base/demo/verified-qa.json";
 let verifiedKnowledgeDemoPromise = null;
 const newProjectShortcutButton = document.querySelector("#new-project-shortcut");
@@ -2403,6 +2406,7 @@ async function loadCashRuleConfig() {
 }
 
 async function loadKnowledgeDocuments() {
+  if (useMiniMvpKnowledge) return;
   if (isOnlineDemo) {
     renderOnlineKnowledgeDemo();
     return;
@@ -6923,3 +6927,45 @@ async function exportWorkpaperCopy() {
     exportWorkpaperCopyButton.disabled = false;
   }
 }
+
+
+// Presentation-only bridge; all RAG and billing remain inside the existing 4184 service.
+(() => {
+  const host = document.querySelector("#knowledge-mini-mvp");
+  const legacy = document.querySelector("#knowledge-legacy");
+  if (isOnlineDemo && host && legacy) {
+    legacy.hidden = true; host.hidden = false;
+    const frame = document.createElement("iframe");
+    frame.title = "AuditMind已验证RAG案例"; frame.className = "knowledge-rag-frame";
+    frame.src = "showcase/index.html"; host.append(frame);
+    window.addEventListener("message", event => {
+      if (event.origin !== location.origin || event.source !== frame.contentWindow || event.data?.type !== "auditmind-kb-height") return;
+      const height = event.data.height;
+      if (Number.isFinite(height) && height >= 100) frame.style.height = Math.min(14000, Math.max(650, height)) + "px";
+    });
+  }
+  if (useMiniMvpKnowledge && host && legacy) {
+    legacy.hidden = true; host.hidden = false;
+    const origin = location.origin;
+    const note = document.createElement("p"); note.className = "helper-text";
+    note.textContent = "正在连接本地新版知识库；仅4份资料，回答须人工复核。";
+    const fallback = document.createElement("a");
+    const url = new URL(location.href); url.searchParams.set("kb", "legacy"); url.hash = "knowledge";
+    fallback.href = url.href; fallback.textContent = "切回原版知识库";
+    const frame = document.createElement("iframe"); frame.title = "AuditMind新版知识库问答";
+    frame.className = "knowledge-rag-frame"; frame.loading = "lazy"; frame.src = origin + "/knowledge";
+    host.append(note, fallback, frame);
+    const timer = setTimeout(() => {note.textContent = "若未显示问答，请启动本地4184服务；也可切回原版知识库。";}, 8000);
+    window.addEventListener("message", event => {
+      if (event.origin !== origin || event.source !== frame.contentWindow || event.data?.type !== "auditmind-kb-height") return;
+      const height = event.data.height;
+      if (!Number.isFinite(height) || height < 100) return;
+      clearTimeout(timer); frame.style.height = Math.min(14000, Math.max(650, height)) + "px";
+      note.textContent = "本地新版知识库 · 真实回答与引用由4184服务提供。新生成须有有效授权，读取既有回答不收费。";
+    });
+  }
+  if (location.hash === "#knowledge") {
+    showPage("knowledge", "知识库");
+    document.querySelector('[data-page="knowledge"]')?.classList.add("active");
+  }
+})();

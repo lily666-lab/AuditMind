@@ -1,42 +1,67 @@
-# AuditMind
+# AuditMind · AI审计工作流助手
 
-AuditMind is an AI audit workflow assistant prototype for portfolio and interview demos.
+用于个人学习和AI财务产品经理岗位面试展示的原型。项目展示审计业务理解、工作流、资料缺口、风险提示，以及带可信引用的RAG问答；所有AI结论保留人工专业复核环节。
 
-The public version is a safe online showcase. It presents the product landing page, workflow screens, local-first privacy positioning, RAG/citation concept, audit workbench, sampling center, template management, and confirmation center planning.
+[线上作品预览](https://lily666-lab.github.io/AuditMind/)提供蓝白UI、侧边导航及**已验证案例演示**。知识库案例来自本地真实模型测试，是固定历史回答回放，不是在线实时DeepSeek服务。
 
-The full local demo keeps sensitive capabilities on the user's machine:
+## 冻结的RAG Mini MVP
 
-- Local knowledge-base retrieval
-- AI answer summarization through a private `.env` API key
-- Audit file parsing
-- Excel workpaper copy export
-- Template-based workpaper generation
+固定4份知识源、139个Chunk，不扩展全库、不增加Agent或重排序：
 
-The online showcase does not upload real audit materials, expose API keys, or process confidential client files.
+|知识源|Chunk|
+|---|---:|
+|货币资金底稿填制规则（个人整理的实务参考）|55|
+|审计准则1312号《函证》|24|
+|审计准则1301号《审计证据》|15|
+|企业会计准则第14号《收入（2017）》|45|
 
-## Local Demo
-
-Run the local server:
-
-```bash
-node server.js
-```
-
-Open:
+本地链路：
 
 ```text
-http://localhost:4173/
+问题 → 有效query缓存 / text-embedding-v4（1024维）
+     → MiniSearch BM25 + LanceDB余弦检索（每路Top-20）
+     → 等权RRF（k=60）→ 完整Top-20证据 → DeepSeek自然回答
+     → 方案B：完整来源名称＋条款号/章节路径
+     → 仅在本次可信证据中唯一匹配 → 点击原文
 ```
 
-## Public Showcase
+正式准则和个人实务参考分别标注。资料不足时明确拒答；错误引用不作为成功答案展示。费用已核实的单次内容失败不会永久阻断后续问题；未知消费或执行状态仍安全暂停，不自动重试。引用可追溯不等于专业结论正确，也不代表资料版本始终适用于当前业务。
 
-The public deployment can be hosted as a static site using:
+## 线上与本地的差异
 
-- `index.html`
-- `styles.css`
-- `script.js`
-- `assets/`
-- `data/`
-- `.nojekyll`
+|能力|GitHub Pages公开版|本地完整版|
+|---|---|---|
+|产品界面与原有导航|静态展示|本地运行|
+|知识库|3个历史真实案例|用户输入新问题|
+|检索及模型调用|不调用API|真实Hybrid、查询Embedding及DeepSeek|
+|引用原文|仅所选公开收入准则条文|本次证据中的可信原文|
+|费用授权与执行记录|不包含|服务端独立预算、次数、有效期及锁|
 
-In the public environment, backend-only functions show a demo-mode notice instead of calling local APIs.
+公开仓库的发布范围是前端静态文件；本地后端、受控知识资料、索引和运行记录未随本次静态更新公开。**仅克隆公开静态仓库不能重现完整本地RAG服务。**
+
+## 已有本地开发工作区启动
+
+以下适用于已配置依赖、4份资料、139条索引和有效授权的完整本地工作区；公开展示包不包含这些运行文件。
+
+在项目目录的两个终端分别运行：
+
+```bash
+AUDITMIND_RAG_QA_MODE=live npm run rag:serve
+```
+
+```bash
+npm start
+```
+
+打开 `http://127.0.0.1:4173/#knowledge`。4173保留AuditMind产品界面，通过本机4184服务提供真实问答；独立4184页面保留为本地测试入口。密钥只能由服务端读取，次数和预算用尽、授权到期或消费状态未知时停止调用。
+
+## 静态发布文件与安全边界
+
+- 根目录：`index.html`、`script.js`、`styles.css`、`.nojekyll`。
+- 已有公开图片：`assets/brand/`、`assets/landing/`、`assets/homepage/`；已有展示规则：`data/cash-workpaper-rules.json`。
+- 新版知识库静态预览：`showcase/`。原问答案例脚本保留作历史版本，新版页面不再加载它。
+- `.env`、凭据、本地知识原文、授权、账本、锁、索引和运行目录不属于发布范围。不要使用 `git add .` 或整目录上传。
+
+本地完整功能只在明确的本机4173分支启用；公开域名显示静态预览。可通过 `?demo=online#knowledge` 在本机预览线上模式。GitHub Pages不运行Node后端，也不需要接收任何API密钥。
+
+本次更新仅准备静态发布文件，正式提交和上线须经确认。公开准则条文来自[财政部收入准则原文](https://kjs.mof.gov.cn/zt/kjzzss/kuaijizhunzeshishi/201709/t20170907_2694006.htm)，仅按案例实际引用范围展示；不公开个人实务参考原文、客户资料或费用记录。

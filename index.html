@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>AuditMind - AI 审计工作流助手</title>
-    <link rel="stylesheet" href="styles.css?v=knowledge-demo-3" />
+    <link rel="stylesheet" href="styles.css?v=rag-showcase-1" />
   </head>
   <body data-view="landing" data-current-page="overview">
     <section class="landing-page" id="landing-page" aria-label="AuditMind 产品介绍">
@@ -461,6 +461,8 @@
           </article>
 
           <article class="content-panel page-section" id="knowledge">
+            <section id="knowledge-mini-mvp" hidden aria-label="新版知识库"></section>
+            <div id="knowledge-legacy">
             <div class="knowledge-workbench">
               <section class="knowledge-qa-panel" aria-labelledby="knowledge-qa-title">
                 <p class="section-kicker">Citation Q&A</p>
@@ -498,6 +500,7 @@
                   <p>系统会先检索本地知识库，再基于命中文档给出回答。资料不足时会明确提示缺口。</p>
                 </div>
               </section>
+            </div>
             </div>
           </article>
 
@@ -1511,7 +1514,6 @@
       </main>
     </div>
 
-    <script src="knowledge-base/demo/verified-qa.js?v=knowledge-demo-1"></script>
-    <script src="script.js?v=knowledge-demo-4"></script>
+    <script src="script.js?v=rag-showcase-1"></script>
   </body>
 </html>
